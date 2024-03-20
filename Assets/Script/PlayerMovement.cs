@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    private Vector2 movement;
     private Rigidbody2D rb;
-    private Vector2 moveDirection;
 
     // Start is called before the first frame update
     void Start()
@@ -17,25 +17,47 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ProcessInputs();
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+        movement = movement.normalized; // Prevent faster diagonal movement
     }
 
     void FixedUpdate()
     {
-        Move();
+        Vector2 newPos = rb.position + movement * moveSpeed * Time.fixedDeltaTime;
+        newPos.x = Mathf.Clamp(newPos.x, GetMinX(), GetMaxX());
+        newPos.y = Mathf.Clamp(newPos.y, GetMinY(), GetMaxY());
+
+        rb.MovePosition(newPos);
     }
 
-    void ProcessInputs()
-    {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-        moveDirection = new Vector2(moveX, moveY).normalized;
-    }
+    float GetMinX()
+{
+    float playerHalfWidth = GetComponent<Collider2D>().bounds.extents.x;
+    // Calculate and return the minimum X boundary plus player's half width
+    return Camera.main.ViewportToWorldPoint(new Vector2(0, 0)).x + playerHalfWidth;
+}
 
-    void Move()
-    {
-        rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
-    }
+float GetMaxX()
+{
+    float playerHalfWidth = GetComponent<Collider2D>().bounds.extents.x;
+    // Calculate and return the maximum X boundary minus player's half width
+    return Camera.main.ViewportToWorldPoint(new Vector2(1, 0)).x - playerHalfWidth;
+}
+
+float GetMinY()
+{
+    float playerHalfHeight = GetComponent<Collider2D>().bounds.extents.y;
+    // Calculate and return the minimum Y boundary plus player's half height
+    return Camera.main.ViewportToWorldPoint(new Vector2(0, 0)).y + playerHalfHeight;
+}
+
+float GetMaxY()
+{
+    float playerHalfHeight = GetComponent<Collider2D>().bounds.extents.y;
+    // Calculate and return the maximum Y boundary minus player's half height
+    return Camera.main.ViewportToWorldPoint(new Vector2(0, 1)).y - playerHalfHeight;
+}
 }
 
 /*public class PlayerMovement : MonoBehaviour
