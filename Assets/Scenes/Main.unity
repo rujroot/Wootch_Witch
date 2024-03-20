@@ -871,6 +871,7 @@ GameObject:
   - component: {fileID: 981647917}
   - component: {fileID: 981647919}
   - component: {fileID: 981647918}
+  - component: {fileID: 981647920}
   m_Layer: 0
   m_Name: Cauldron
   m_TagString: Untagged
@@ -990,6 +991,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &981647920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981647916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a7fcefb3df42d4bbc6b3b30b7144e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1092854566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,6 +1646,7 @@ GameObject:
   - component: {fileID: 1967989287}
   - component: {fileID: 1967989289}
   - component: {fileID: 1967989288}
+  - component: {fileID: 1967989290}
   m_Layer: 0
   m_Name: BlackCat
   m_TagString: Untagged
@@ -1752,6 +1766,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1967989290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967989286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f97b592cfda6dc47b59d45afe59e823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1969116071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1763,6 +1789,7 @@ GameObject:
   - component: {fileID: 1969116072}
   - component: {fileID: 1969116073}
   - component: {fileID: 1969116074}
+  - component: {fileID: 1969116075}
   m_Layer: 0
   m_Name: MagicCircle
   m_TagString: Untagged
@@ -1872,6 +1899,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.49999997
+--- !u!114 &1969116075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969116071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02ece7c4f6a448449a21fd039cef736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
