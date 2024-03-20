@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface INteractable
 {
-    public void Interact();
+    public void Interact(GameObject player);
 }

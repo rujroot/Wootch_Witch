@@ -28,7 +28,7 @@ public class PlayerInteraction : MonoBehaviour
             INteractable interactObj = nearestObject.GetComponent<INteractable>();
             if (interactObj != null)
             {
-                interactObj.Interact();
+                interactObj.Interact(Player);
             }
         }
 
