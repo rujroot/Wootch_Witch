@@ -7,7 +7,7 @@ public class PlayerInteraction : MonoBehaviour
 {
     public GameObject Player, Objects;
     public RectTransform rectTransform;
-    public double MINDISTANCE = 2.0f;
+    public double MINDISTANCE = 3.0f;
 
     // Update is called once per frame
     void Update()
