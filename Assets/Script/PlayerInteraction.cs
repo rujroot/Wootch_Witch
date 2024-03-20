@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Windows;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -21,7 +22,11 @@ public class PlayerInteraction : MonoBehaviour
         {
             rectTransform.anchoredPosition = new Vector3(-10000.0f, -10000.0f, -10000.0f);
         }
-        
+
+        if (UnityEngine.Input.GetKeyDown(KeyCode.E) && nearestObject)
+        {
+            print(nearestObject);
+        }
 
     }
 
