@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlackCatInteract :  MonoBehaviour, INteractable
+public class MagicCircleInteract :  MonoBehaviour, INteractable
 {
     public void Interact(GameObject player)
     {
-        print("Your friend, Im.");
+        print("You are my specialz.");
     }
    
 }
