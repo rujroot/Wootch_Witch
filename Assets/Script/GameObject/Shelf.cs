@@ -6,7 +6,7 @@ public class Shelf :  MonoBehaviour, INteractable
 {
     public void Interact()
     {
-        print("Get Grass");
+        
     }
    
 }
