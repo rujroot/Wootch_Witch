@@ -25,7 +25,11 @@ public class PlayerInteraction : MonoBehaviour
 
         if (UnityEngine.Input.GetKeyDown(KeyCode.E) && nearestObject)
         {
-            print(nearestObject);
+            INteractable interactObj = nearestObject.GetComponent<INteractable>();
+            if (interactObj != null)
+            {
+                interactObj.Interact();
+            }
         }
 
     }
