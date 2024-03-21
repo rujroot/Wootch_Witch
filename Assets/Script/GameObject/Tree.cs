@@ -10,11 +10,13 @@ public class Tree : MonoBehaviour, INteractable
     {
         Inventory inventory = player.GetComponent<Inventory>();
         GameObject glass = inventory.Find("Glass");
+        Timer timer = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Timer>();
 
         if (glass != null)
         {
             inventory.Delete(glass);
             inventory.CreateItem(glassWithTreeSprite, "GlassWithTree");
+            timer.Finish("Tree");
         }
 
     }

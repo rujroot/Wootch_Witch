@@ -11,6 +11,7 @@ public class BlackCatInteract :  MonoBehaviour, INteractable
     {
         Inventory inventory = player.GetComponent<Inventory>();
         GameObject potion = inventory.Find("Potion");
+        Timer timer = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Timer>();
 
         if (potion != null)
         {
@@ -21,6 +22,8 @@ public class BlackCatInteract :  MonoBehaviour, INteractable
         else
         {
             Destroy(cat);
+            timer.Finish("Cat");
+
         }
 
     }

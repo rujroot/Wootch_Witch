@@ -16,20 +16,39 @@ public class PlayerInteraction : MonoBehaviour
 
         if (nearestObject != null)
         {
-            rectTransform.anchoredPosition = nearestObject.transform.position + new Vector3(0, nearestObject.transform.localScale.y, 0);
+            float y = 0;
+
+            BoxCollider2D collider = nearestObject.GetComponent<BoxCollider2D>();
+            CircleCollider2D circleCollider = nearestObject.GetComponent<CircleCollider2D>();
+
+            if(collider != null) y = collider.size.y;
+            if (circleCollider != null) y = circleCollider.radius;
+            
+            rectTransform.anchoredPosition = nearestObject.transform.position + new Vector3(0f, 0.5f , 0f);
         }
         else
         {
             rectTransform.anchoredPosition = new Vector3(-10000.0f, -10000.0f, -10000.0f);
         }
 
-        if (UnityEngine.Input.GetKeyDown(KeyCode.E) && nearestObject)
+        Dialogue dialogue = Player.GetComponent<Dialogue>();
+
+        if (UnityEngine.Input.GetKeyDown(KeyCode.E) && nearestObject && !dialogue.OnDialogue() )
         {
             INteractable interactObj = nearestObject.GetComponent<INteractable>();
-            if (interactObj != null)
+            IDialogueable dialogueable = nearestObject.GetComponent<IDialogueable>();
+
+            if (dialogueable != null)
+            {
+                dialogueable.PlayDialogue(Player);
+            }
+            else if (interactObj != null)
             {
                 interactObj.Interact(Player);
             }
+        }else if (UnityEngine.Input.GetKeyDown(KeyCode.E) && dialogue.OnDialogue())
+        {
+            dialogue.NextDialogue();
         }
 
     }

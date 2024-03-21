@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -17,9 +18,23 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-        movement = movement.normalized; // Prevent faster diagonal movement
+        Dialogue dialogue = GetComponent<Dialogue>();
+
+        GameObject gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        Timer timer = gameManager.GetComponent<Timer>();
+
+
+        if (!dialogue.OnDialogue() && !timer.isGameEnd())
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+            movement = movement.normalized; // Prevent faster diagonal movement
+        }
+        else
+        {
+            movement = new Vector3(0f, 0f, 0f);
+        }
+        
     }
 
     void FixedUpdate()

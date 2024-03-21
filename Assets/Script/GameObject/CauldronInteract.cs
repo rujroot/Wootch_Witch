@@ -10,11 +10,14 @@ public class CauldronInteract :  MonoBehaviour, INteractable
     {
         Inventory inventory = player.GetComponent<Inventory>();
         GameObject glass = inventory.Find("Glass");
-        print("Cal");
+
+        Timer timer = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Timer>();
         if (glass != null)
         {
             inventory.Delete(glass);
             inventory.CreateItem(potionSprite, "Potion");
+
+            timer.Finish("Cauldron");
         }
     }
    

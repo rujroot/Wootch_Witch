@@ -10,13 +10,14 @@ public class MagicCircleInteract :  MonoBehaviour, INteractable
     {
         Inventory inventory = player.GetComponent<Inventory>();
         GameObject carpet = inventory.Find("Carpet");
-        print(carpet);
+        Timer timer = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Timer>();
 
         if (carpet != null)
         {
             inventory.Delete(carpet);
             TopCarpet.SetActive(true);
             Destroy(magic);
+            timer.Finish("Ring");
         }
 
     }
