@@ -23,9 +23,11 @@ public class Inventory : MonoBehaviour
         for(int i = 0; i < items.Count; i++)
         {
             GameObject item = items[i];
-            item.GetComponent<RectTransform>().anchoredPosition = new Vector3(50 + i * 100, 0f, 0f);
+            item.GetComponent<RectTransform>().anchoredPosition = new Vector3(100 + i * 100, 0f, 0f);
         }
-        
+
+        Vector2 size = InventoryUI.GetComponent<RectTransform>().sizeDelta;
+        InventoryUI.GetComponent<RectTransform>().sizeDelta = new Vector2(100 + items.Count * 100, size.y);
     }
 
     public GameObject Find(string name)
