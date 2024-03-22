@@ -49,6 +49,10 @@ public class PlayerInteraction : MonoBehaviour
         }else if (UnityEngine.Input.GetKeyDown(KeyCode.E) && dialogue.OnDialogue())
         {
             dialogue.NextDialogue();
+        }else if (UnityEngine.Input.GetKeyDown(KeyCode.R))
+        {
+            Timer timer = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Timer>();
+            timer.GameReset("Main");
         }
 
     }

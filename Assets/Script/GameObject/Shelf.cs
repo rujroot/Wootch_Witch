@@ -1,32 +1,45 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Shelf :  MonoBehaviour, INteractable, IDialogueable
 {
     public Sprite sprite;
-    public bool isGet = false;
 
-    private List<string> dialogues = new List<string> { "This is Shelf", "I found a bottle." };
+    private bool firstMeet = true;
+
     public void Interact(GameObject player)
     {
-      
-        if (!isGet)
+        Dialogue dialogue = player.GetComponent<Dialogue>();
+
+        if (firstMeet)
         {
-            isGet = true;
+            firstMeet = false;
             Inventory inventory = player.GetComponent<Inventory>();
             inventory.CreateItem(sprite, "Glass");
-
-            dialogues.RemoveAt(1);
         }
         
     }
 
     public void PlayDialogue(GameObject player)
     {
+
         Dialogue dialogue = player.GetComponent<Dialogue>();
-        dialogue.AddDialogue(dialogues, this);
+        if(firstMeet)
+        {
+            dialogue.AddDialogue(new List<string> { 
+                "A vessel meant for holding a witch's potion,", 
+                "but with its beautiful design,", 
+                "some villagers use it as a planter for their plants." }, this);
+        }
+        else
+        {
+            dialogue.AddDialogue(new List<string> {
+                "It's Empty." }, this);
+        }
+        
 
 
     }

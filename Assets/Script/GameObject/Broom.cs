@@ -5,11 +5,15 @@ using UnityEngine;
 public class Broom : MonoBehaviour, IDialogueable, INteractable
 {
     public bool isUse = false;
+    public GameObject cat, player;
 
     private Camera mainCamera;
     private float screenWidth;
     private float screenHeight;
+    private Vector2 dir = new Vector2(-1, 0);
+    private float speed = 50.0f;
     private Rigidbody2D rb;
+
 
     void Start()
     {
@@ -27,27 +31,51 @@ public class Broom : MonoBehaviour, IDialogueable, INteractable
     {
         if(isUse)
         {
-            Vector2 newPos = rb.position + new Vector2(1, 1) * 2.0f * Time.fixedDeltaTime;
+            Vector2 newPos = rb.position + dir * speed * Time.deltaTime;
             rb.MovePosition(newPos);
-        }
-        // Check if the object is within the screen bounds
-        Vector3 objectPosition = transform.position;
-        bool withinBounds = IsWithinScreenBounds(objectPosition);
 
-        if (!withinBounds)
-        {
-            // Handle out-of-bounds cases here
+
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+
+            transform.rotation = Quaternion.Euler(0, 0, angle + 270);
         }
 
     }
 
-    bool IsWithinScreenBounds(Vector3 position)
+    IEnumerator RanddomBroom()
     {
-        // Check if the object's position is within the screen bounds
-        return position.x >= mainCamera.transform.position.x - screenWidth / 2 &&
-               position.x <= mainCamera.transform.position.x + screenWidth / 2 &&
-               position.y >= mainCamera.transform.position.y - screenHeight / 2 &&
-               position.y <= mainCamera.transform.position.y + screenHeight / 2;
+        
+        for(int i = 0; i < 3; ++i)
+        {
+            yield return new WaitForSeconds(0.5f);
+            if(i == 1)
+            {
+                dir = new Vector2(1, 1);
+            }
+            else if(i == 2)
+            {
+                dir = new Vector2(0, -1);
+            }
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        if (cat != null)
+        {
+            Vector2 catPos = new Vector2(cat.transform.position.x, cat.transform.position.y);
+            Vector2 broomPos = new Vector2(transform.position.x, transform.position.y);
+
+            dir = (catPos - broomPos).normalized;
+        }
+
+    }
+
+    IEnumerator MakeDestory()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(cat);
+        Destroy(transform.gameObject);
+
     }
 
     private List<string> dialogues = new List<string> { "I will try to hide it.", "Opsss!!!" };
@@ -57,7 +85,7 @@ public class Broom : MonoBehaviour, IDialogueable, INteractable
         if (!isUse)
         {
             isUse = true;
-            
+            StartCoroutine(RanddomBroom());
         }
 
     }
@@ -65,7 +93,27 @@ public class Broom : MonoBehaviour, IDialogueable, INteractable
     public void PlayDialogue(GameObject player)
     {
         Dialogue dialogue = player.GetComponent<Dialogue>();
-        dialogue.AddDialogue(dialogues, this);
-
+        if (!isUse)
+        {
+            dialogue.AddDialogue(new List<string> { "The magical flying apparatus, repurposed by villagers for floor cleaning!" }, this);
+        }
+        
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.name == "BlackCat")
+        {
+            Dialogue dialogue = player.GetComponent<Dialogue>();
+            dialogue.AddDialogue(new List<string> { "The flying broom sweeps everywhere, even colliding with cats!" }
+            , null);
+            Timer timer = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Timer>();
+            timer.Finish("Cat");
+            cat = other.gameObject;
+            other.gameObject.transform.SetParent(transform);
+            other.gameObject.transform.localPosition = transform.localPosition;
+            StartCoroutine(MakeDestory());
+        }
+    }
+
 }

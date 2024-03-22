@@ -8,7 +8,7 @@ using UnityEngine;
 public class Dialogue : MonoBehaviour
 {
 
-    public RectTransform dialogueRect;
+    public RectTransform dialogueRect, left, right;
     public TextMeshProUGUI textUI;
     public GameObject player;
 
@@ -23,11 +23,14 @@ public class Dialogue : MonoBehaviour
         {
             // set data
             allDialogues.Clear();
+            onDialogue = false;
 
             // clear text
             textUI.text = " ";
             Vector2 size = dialogueRect.sizeDelta;
             dialogueRect.sizeDelta = new Vector2(0, size.y);
+            left.sizeDelta = new Vector2(0, 0);
+            right.sizeDelta = new Vector2(0, 0);
 
             // last interact
             if (interactObject != null)
@@ -36,7 +39,7 @@ public class Dialogue : MonoBehaviour
                 interactObject = null;
             }
             
-            onDialogue = false;
+            
         }
         else
         {
@@ -50,7 +53,16 @@ public class Dialogue : MonoBehaviour
     {
         textUI.text = allDialogues[index];
         Vector2 size = dialogueRect.sizeDelta;
-        dialogueRect.sizeDelta = new Vector2(textUI.fontSize * textUI.text.Length, size.y);
+        float lenght = 20 * textUI.text.Length;
+
+        left.sizeDelta = new Vector2(50, 150);
+        right.sizeDelta = new Vector2(50, 150);
+
+        left.anchoredPosition = new Vector2(-lenght / 2 ,0);
+        right.anchoredPosition = new Vector2(lenght / 2, 0);
+        dialogueRect.sizeDelta = new Vector2(lenght, size.y);
+
+        
     }
 
     public void AddDialogue(List<string> dialogues, INteractable interactable)

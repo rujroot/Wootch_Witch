@@ -27,7 +27,9 @@ public class Inventory : MonoBehaviour
         }
 
         Vector2 size = InventoryUI.GetComponent<RectTransform>().sizeDelta;
-        InventoryUI.GetComponent<RectTransform>().sizeDelta = new Vector2(100 + items.Count * 100, size.y);
+        float rectSize = 100 + items.Count * 100;
+         InventoryUI.SetActive(rectSize > 0);
+        InventoryUI.GetComponent<RectTransform>().sizeDelta = new Vector2(rectSize, size.y);
     }
 
     public GameObject Find(string name)

@@ -6,6 +6,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Timer : MonoBehaviour
     public int GAME_TIME = 60;
     public TextMeshProUGUI textUI;
     public GameObject cameraPoint, Player, NPCs;
+    public Image Fade;
 
     public List<string> quests = new List<string>() { "Cauldron", "Tree", "Cat", "Ring" } ;
 
@@ -24,6 +26,7 @@ public class Timer : MonoBehaviour
     {
         // Start the coroutine
         currentTime = GAME_TIME;
+        gameEnd = false;
         StartCoroutine(Counter());
     }
 
@@ -31,7 +34,8 @@ public class Timer : MonoBehaviour
     {
         public void Interact(GameObject player)
         {
-            SceneManager.LoadScene("Main");
+            Timer timer = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Timer>();
+            timer.GameReset("Main");
         }
     }
 
@@ -39,7 +43,8 @@ public class Timer : MonoBehaviour
     {
         public void Interact(GameObject player)
         {
-            SceneManager.LoadScene("Win");
+            Timer timer = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Timer>();
+            timer.GameReset("Win");
         }
     }
 
@@ -81,11 +86,32 @@ public class Timer : MonoBehaviour
         return gameEnd;
     }
 
+    public void GameReset(string sence)
+    {
+        gameEnd = true;
+        StartCoroutine(UIFade(sence));
+    }
+
+    IEnumerator UIFade(string sence)
+    {
+        for(int i = 0; i < 256; ++i)
+        {
+            yield return new WaitForSeconds(0.01f);
+            Fade.color = new Color32(0, 0, 0, (byte)(i));
+        }
+        SceneManager.LoadScene(sence);
+    }
+
     IEnumerator Counter()
     {
         while (true)
         {
             yield return new WaitForSeconds(1f);
+            if (gameEnd)
+            {
+                break;
+            } 
+
             currentTime = currentTime - 1;
             if(currentTime < 0 )
             {
