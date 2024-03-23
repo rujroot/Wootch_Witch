@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class BlackCatInteract :  MonoBehaviour, INteractable, IDialogueable
 {
-    public Sprite keySprite;
-    public Sprite glassSprite;
+    public Sprite keySprite, glassSprite;
     public GameObject cat;
-
+    public Animator smoke;
 
     private bool firstMeet = true;
     public void Interact(GameObject player)
@@ -28,9 +27,9 @@ public class BlackCatInteract :  MonoBehaviour, INteractable, IDialogueable
         }
         else
         {
+            smoke.SetTrigger("Play");
             Destroy(cat);
             timer.Finish("Cat");
-
         }
 
     }

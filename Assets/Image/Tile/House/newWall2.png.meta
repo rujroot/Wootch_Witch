@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c8f0e7e1d76fe1c409039ade1ac6c99c
+guid: 9c78be97de145d54780fc928744aa55f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -65,10 +65,23 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -106,30 +119,38 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cat-2-Idle_0
+      name: newWall2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c198cfa1e194e594383ab073c9be514e
+      internalID: 1848980649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newWall2_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 18
-        width: 19
-        height: 14
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7244d3bfb3d51284bb9f63256a16d10e
-      internalID: 29325209
+      spriteID: a78ec7a4376d5c84dbf30d9b6a21c65a
+      internalID: -526216426
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_1
+      name: newWall2_2
       rect:
         serializedVersion: 2
-        x: 65
-        y: 18
-        width: 20
-        height: 13
+        x: 0
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a62953695e62cf45b439bb1de801213
-      internalID: -352063176
+      spriteID: 7e66225df8523944ca67fefdcadbe435
+      internalID: -1549799100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_2
+      name: newWall2_3
       rect:
         serializedVersion: 2
-        x: 114
-        y: 18
-        width: 21
-        height: 13
+        x: 16
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03c66dd0a490cc547afa130448165afe
-      internalID: 1177631573
+      spriteID: 0e691c84fbcbc8a46b2ca8b151f17579
+      internalID: -1956164684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_3
+      name: newWall2_4
       rect:
         serializedVersion: 2
-        x: 165
-        y: 18
-        width: 20
-        height: 13
+        x: 0
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebff3676b6c7e9140aa7ee0313ba6c15
-      internalID: 2063199748
+      spriteID: 167c5122bc1cfdb4187d3b8da109386e
+      internalID: 324579513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_4
+      name: newWall2_5
       rect:
         serializedVersion: 2
-        x: 216
-        y: 18
-        width: 19
-        height: 13
+        x: 16
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b43dbf8cee60c294e9d8eddc9606cbc3
-      internalID: -624807298
+      spriteID: 1019fd74597902345a0d4c5b545fb6e8
+      internalID: 955842620
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_5
+      name: newWall2_6
       rect:
         serializedVersion: 2
-        x: 266
-        y: 18
-        width: 19
-        height: 13
+        x: 0
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27ddb10dee1c5ea4aa0916df3bdd437f
-      internalID: -722502699
+      spriteID: 55aa5785206578845911f31d2c10292d
+      internalID: 98484216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_6
+      name: newWall2_7
       rect:
         serializedVersion: 2
-        x: 316
-        y: 18
-        width: 19
-        height: 13
+        x: 16
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +284,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8a1e9785b57c84409320a5998c01d5d
-      internalID: -731346573
+      spriteID: beac90d7f8e08f946b699f0d9ca990ba
+      internalID: 148917783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_7
+      name: newWall2_8
       rect:
         serializedVersion: 2
-        x: 365
-        y: 18
-        width: 20
-        height: 14
+        x: 0
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,20 +305,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2b4af438c19f8e428c96597bc71002a
-      internalID: 1100012389
+      spriteID: d6a76aafbbdc5a248a2078a53c265313
+      internalID: 1772358137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_8
+      name: newWall2_9
       rect:
         serializedVersion: 2
-        x: 416
-        y: 18
-        width: 19
-        height: 14
+        x: 16
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,20 +326,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0449365d952c7e84a9e10249af5f8762
-      internalID: -858968663
+      spriteID: daeb628734f6c464fbf2cad0d3dc138c
+      internalID: 1346393252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_9
+      name: newWall2_10
       rect:
         serializedVersion: 2
-        x: 467
-        y: 18
-        width: 18
-        height: 14
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,8 +347,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0978c03e26e7f6644baf52d7519e6945
-      internalID: -2096875981
+      spriteID: 472fd837f141d0844bde9d35cadc856f
+      internalID: -899616989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newWall2_11
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b41d936957bb244a8c51e290cab6c4a
+      internalID: 726734711
       vertices: []
       indices: 
       edges: []
@@ -343,16 +385,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cat-2-Idle_0: 29325209
-      Cat-2-Idle_1: -352063176
-      Cat-2-Idle_2: 1177631573
-      Cat-2-Idle_3: 2063199748
-      Cat-2-Idle_4: -624807298
-      Cat-2-Idle_5: -722502699
-      Cat-2-Idle_6: -731346573
-      Cat-2-Idle_7: 1100012389
-      Cat-2-Idle_8: -858968663
-      Cat-2-Idle_9: -2096875981
+      newWall2_0: 1848980649
+      newWall2_1: -526216426
+      newWall2_10: -899616989
+      newWall2_11: 726734711
+      newWall2_2: -1549799100
+      newWall2_3: -1956164684
+      newWall2_4: 324579513
+      newWall2_5: 955842620
+      newWall2_6: 98484216
+      newWall2_7: 148917783
+      newWall2_8: 1772358137
+      newWall2_9: 1346393252
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -6,24 +6,15 @@ public class Broom : MonoBehaviour, IDialogueable, INteractable
 {
     public bool isUse = false;
     public GameObject cat, player;
+    public Animator smoke;
 
-    private Camera mainCamera;
-    private float screenWidth;
-    private float screenHeight;
     private Vector2 dir = new Vector2(-1, 0);
-    private float speed = 50.0f;
+    private float speed = 60.0f;
     private Rigidbody2D rb;
 
 
     void Start()
     {
-        // Get the main camera
-        mainCamera = Camera.main;
-
-        // Get screen dimensions in world coordinates
-        screenWidth = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0)).x - mainCamera.ScreenToWorldPoint(Vector3.zero).x;
-        screenHeight = mainCamera.ScreenToWorldPoint(new Vector3(0, Screen.height, 0)).y - mainCamera.ScreenToWorldPoint(Vector3.zero).y;
-
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -68,11 +59,15 @@ public class Broom : MonoBehaviour, IDialogueable, INteractable
             dir = (catPos - broomPos).normalized;
         }
 
+        yield return new WaitForSeconds(0.5f);
+
+        dir = -dir;
+
     }
 
     IEnumerator MakeDestory()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         Destroy(cat);
         Destroy(transform.gameObject);
 
@@ -95,6 +90,7 @@ public class Broom : MonoBehaviour, IDialogueable, INteractable
         Dialogue dialogue = player.GetComponent<Dialogue>();
         if (!isUse)
         {
+            smoke.SetTrigger("Play");
             dialogue.AddDialogue(new List<string> { "The magical flying apparatus, repurposed by villagers for floor cleaning!" }, this);
         }
         
@@ -110,8 +106,9 @@ public class Broom : MonoBehaviour, IDialogueable, INteractable
             Timer timer = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Timer>();
             timer.Finish("Cat");
             cat = other.gameObject;
-            other.gameObject.transform.SetParent(transform);
-            other.gameObject.transform.localPosition = transform.localPosition;
+            cat.GetComponent<Collider2D>().isTrigger = true;
+            cat.transform.SetParent(transform);
+            cat.transform.localPosition = Vector3.zero;
             StartCoroutine(MakeDestory());
         }
     }

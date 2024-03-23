@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c8f0e7e1d76fe1c409039ade1ac6c99c
+guid: 5b6f1f9f2a7532a45a289f7f8800923e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -65,10 +65,23 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -106,30 +119,38 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cat-2-Idle_0
+      name: TEst_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b3bd6ae897a7474291ff0ad50ad306c
+      internalID: 1240811209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TEst_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 18
-        width: 19
-        height: 14
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7244d3bfb3d51284bb9f63256a16d10e
-      internalID: 29325209
+      spriteID: beaa877b208f970418f8abe847c5e13e
+      internalID: -654375268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_1
+      name: TEst_2
       rect:
         serializedVersion: 2
-        x: 65
-        y: 18
-        width: 20
-        height: 13
+        x: 0
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a62953695e62cf45b439bb1de801213
-      internalID: -352063176
+      spriteID: 4263b722eca28504ba7850f684358fb2
+      internalID: 1186962797
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_2
+      name: TEst_3
       rect:
         serializedVersion: 2
-        x: 114
-        y: 18
-        width: 21
-        height: 13
+        x: 16
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03c66dd0a490cc547afa130448165afe
-      internalID: 1177631573
+      spriteID: c93b3d6c85baa73419a243cc9069297c
+      internalID: -77567304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_3
+      name: TEst_4
       rect:
         serializedVersion: 2
-        x: 165
-        y: 18
-        width: 20
-        height: 13
+        x: 0
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebff3676b6c7e9140aa7ee0313ba6c15
-      internalID: 2063199748
+      spriteID: 468dd13e34680f648847f8c020de821f
+      internalID: 1731251589
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_4
+      name: TEst_5
       rect:
         serializedVersion: 2
-        x: 216
-        y: 18
-        width: 19
-        height: 13
+        x: 16
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b43dbf8cee60c294e9d8eddc9606cbc3
-      internalID: -624807298
+      spriteID: c8a74ed79bf1ae94596cd73e816af417
+      internalID: 1304204028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_5
+      name: TEst_6
       rect:
         serializedVersion: 2
-        x: 266
-        y: 18
-        width: 19
-        height: 13
+        x: 0
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27ddb10dee1c5ea4aa0916df3bdd437f
-      internalID: -722502699
+      spriteID: a00eb33f521fc5240b3379d25cc4b367
+      internalID: 1462353802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_6
+      name: TEst_7
       rect:
         serializedVersion: 2
-        x: 316
-        y: 18
-        width: 19
-        height: 13
+        x: 16
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +284,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8a1e9785b57c84409320a5998c01d5d
-      internalID: -731346573
+      spriteID: 70bfb5f1418d43046bf15d5db36af1e8
+      internalID: 270664586
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_7
+      name: TEst_8
       rect:
         serializedVersion: 2
-        x: 365
-        y: 18
-        width: 20
-        height: 14
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,20 +305,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2b4af438c19f8e428c96597bc71002a
-      internalID: 1100012389
+      spriteID: b681551df188bbb439fa793b763e5308
+      internalID: 237321632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_8
+      name: TEst_9
       rect:
         serializedVersion: 2
-        x: 416
-        y: 18
-        width: 19
-        height: 14
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,29 +326,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0449365d952c7e84a9e10249af5f8762
-      internalID: -858968663
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cat-2-Idle_9
-      rect:
-        serializedVersion: 2
-        x: 467
-        y: 18
-        width: 18
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0978c03e26e7f6644baf52d7519e6945
-      internalID: -2096875981
+      spriteID: e9b6128f1bf0299428f61787499839bc
+      internalID: 1176574881
       vertices: []
       indices: 
       edges: []
@@ -343,16 +343,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cat-2-Idle_0: 29325209
-      Cat-2-Idle_1: -352063176
-      Cat-2-Idle_2: 1177631573
-      Cat-2-Idle_3: 2063199748
-      Cat-2-Idle_4: -624807298
-      Cat-2-Idle_5: -722502699
-      Cat-2-Idle_6: -731346573
-      Cat-2-Idle_7: 1100012389
-      Cat-2-Idle_8: -858968663
-      Cat-2-Idle_9: -2096875981
+      TEst_0: 1240811209
+      TEst_1: -654375268
+      TEst_2: 1186962797
+      TEst_3: -77567304
+      TEst_4: 1731251589
+      TEst_5: 1304204028
+      TEst_6: 1462353802
+      TEst_7: 270664586
+      TEst_8: 237321632
+      TEst_9: 1176574881
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

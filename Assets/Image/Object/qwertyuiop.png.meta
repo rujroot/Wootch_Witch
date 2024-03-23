@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c8f0e7e1d76fe1c409039ade1ac6c99c
+guid: 3af7b63fbcc3ea3498a61a4c944bb47a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -65,10 +65,23 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -106,30 +119,38 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cat-2-Idle_0
+      name: qwertyuiop_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d77072a5123ac4db472f86b3fae57b
+      internalID: 2145734466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qwertyuiop_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 18
-        width: 19
-        height: 14
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7244d3bfb3d51284bb9f63256a16d10e
-      internalID: 29325209
+      spriteID: 6545b2e14c079964cbedb45c05d6b60c
+      internalID: 1467727558
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_1
+      name: qwertyuiop_2
       rect:
         serializedVersion: 2
-        x: 65
-        y: 18
-        width: 20
-        height: 13
+        x: 32
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a62953695e62cf45b439bb1de801213
-      internalID: -352063176
+      spriteID: fe75f7fd048d08a4089d9baa05688a92
+      internalID: -953323765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_2
+      name: qwertyuiop_3
       rect:
         serializedVersion: 2
-        x: 114
-        y: 18
-        width: 21
-        height: 13
+        x: 48
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03c66dd0a490cc547afa130448165afe
-      internalID: 1177631573
+      spriteID: ac5c37f2f3965974db6df2a0322c0af9
+      internalID: 1184052023
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_3
+      name: qwertyuiop_4
       rect:
         serializedVersion: 2
-        x: 165
-        y: 18
-        width: 20
-        height: 13
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebff3676b6c7e9140aa7ee0313ba6c15
-      internalID: 2063199748
+      spriteID: 4ee152103934ddc42b8decc513253eaf
+      internalID: 235283172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_4
+      name: qwertyuiop_5
       rect:
         serializedVersion: 2
-        x: 216
-        y: 18
-        width: 19
-        height: 13
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b43dbf8cee60c294e9d8eddc9606cbc3
-      internalID: -624807298
+      spriteID: 7df8f6b8b58419946b5312e8df9d6838
+      internalID: -1312757773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_5
+      name: qwertyuiop_6
       rect:
         serializedVersion: 2
-        x: 266
-        y: 18
-        width: 19
-        height: 13
+        x: 32
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27ddb10dee1c5ea4aa0916df3bdd437f
-      internalID: -722502699
+      spriteID: 927e8ecbad969a844aae2e323bba8ef0
+      internalID: -1407930168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Idle_6
+      name: qwertyuiop_7
       rect:
         serializedVersion: 2
-        x: 316
-        y: 18
-        width: 19
-        height: 13
+        x: 48
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,71 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8a1e9785b57c84409320a5998c01d5d
-      internalID: -731346573
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cat-2-Idle_7
-      rect:
-        serializedVersion: 2
-        x: 365
-        y: 18
-        width: 20
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2b4af438c19f8e428c96597bc71002a
-      internalID: 1100012389
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cat-2-Idle_8
-      rect:
-        serializedVersion: 2
-        x: 416
-        y: 18
-        width: 19
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0449365d952c7e84a9e10249af5f8762
-      internalID: -858968663
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cat-2-Idle_9
-      rect:
-        serializedVersion: 2
-        x: 467
-        y: 18
-        width: 18
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0978c03e26e7f6644baf52d7519e6945
-      internalID: -2096875981
+      spriteID: 7a58898e9dc87ac4099879792f5d83f5
+      internalID: -1373883696
       vertices: []
       indices: 
       edges: []
@@ -343,16 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cat-2-Idle_0: 29325209
-      Cat-2-Idle_1: -352063176
-      Cat-2-Idle_2: 1177631573
-      Cat-2-Idle_3: 2063199748
-      Cat-2-Idle_4: -624807298
-      Cat-2-Idle_5: -722502699
-      Cat-2-Idle_6: -731346573
-      Cat-2-Idle_7: 1100012389
-      Cat-2-Idle_8: -858968663
-      Cat-2-Idle_9: -2096875981
+      qwertyuiop_0: 2145734466
+      qwertyuiop_1: 1467727558
+      qwertyuiop_2: -953323765
+      qwertyuiop_3: 1184052023
+      qwertyuiop_4: 235283172
+      qwertyuiop_5: -1312757773
+      qwertyuiop_6: -1407930168
+      qwertyuiop_7: -1373883696
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
