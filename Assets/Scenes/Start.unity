@@ -279,10 +279,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7c004b63ca9653941b4bcc5fbca9db22, type: 3}
   - {fileID: 21300000, guid: cd108746eda986c45a6ddf940ece004c, type: 3}
   slideTexts:
-  - ..
-  - ..
-  - ..
-  - ..
+  - 
+  - '"Thou art the enchantress."'
+  - '"This is what thou art deserving of."'
+  - '"Thou art to be burned." totem of undying "Ayo, What be that green light?"'
   startButton: {fileID: 962236670}
   displayImage: {fileID: 1881025309}
   startImage: {fileID: 1015343021}
