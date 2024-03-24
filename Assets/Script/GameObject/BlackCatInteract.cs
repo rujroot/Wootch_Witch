@@ -6,7 +6,7 @@ public class BlackCatInteract :  MonoBehaviour, INteractable, IDialogueable
 {
     public Sprite keySprite, glassSprite;
     public GameObject cat;
-    public Animator smoke;
+    public Animator smoke, catKey;
 
     private bool firstMeet = true;
     public void Interact(GameObject player)
@@ -22,6 +22,7 @@ public class BlackCatInteract :  MonoBehaviour, INteractable, IDialogueable
             inventory.Delete(potion);
             inventory.CreateItem(keySprite, "Key");
             inventory.CreateItem(glassSprite, "Glass");
+            catKey.SetTrigger("Play");
 
             dialogue.AddDialogue(new List<string>() { "This key might just unlock the door!" }, null);
         }

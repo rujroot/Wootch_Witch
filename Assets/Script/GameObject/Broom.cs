@@ -80,6 +80,10 @@ public class Broom : MonoBehaviour, IDialogueable, INteractable
         if (!isUse)
         {
             isUse = true;
+            GetComponent<BoxCollider2D>().isTrigger = true;
+            rb = transform.gameObject.AddComponent<Rigidbody2D>();
+            rb.gravityScale = 0;
+            
             StartCoroutine(RanddomBroom());
         }
 

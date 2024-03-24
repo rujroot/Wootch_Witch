@@ -53,6 +53,11 @@ public class Timer : MonoBehaviour
         quests.Remove(quest);
     }
 
+    public void AddQuest(string quest)
+    {
+        quests.Add(quest);
+    }
+
     private void Check()
     {
         Camera mainCamera = Camera.main;
@@ -65,7 +70,7 @@ public class Timer : MonoBehaviour
             dialogue.AddDialogue(new List<string>() { "...", "We found a cauldron!", "She is a Witch!"}, new Lost());
         }else if (quests.Contains("Tree"))
         {
-            dialogue.AddDialogue(new List<string>() { "...", "We found a potion!", "She is a Witch!" }, new Lost());
+            dialogue.AddDialogue(new List<string>() { "...", "We found a potion bottle!", "She is a Witch!" }, new Lost());
         }
         else if (quests.Contains("Cat"))
         {
@@ -74,6 +79,10 @@ public class Timer : MonoBehaviour
         else if (quests.Contains("Ring"))
         {
             dialogue.AddDialogue(new List<string>() { "...", "We found a magic circle!", "She is a Witch!" }, new Lost());
+        }
+        else if (quests.Contains("Witch"))
+        {
+            dialogue.AddDialogue(new List<string>() { "...", "We found a clone of witch!", "She is a Witch!" }, new Lost());
         }
         else
         {

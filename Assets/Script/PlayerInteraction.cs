@@ -15,16 +15,8 @@ public class PlayerInteraction : MonoBehaviour
         GameObject nearestObject = GetNearestObject();
 
         if (nearestObject != null)
-        {
-            float y = 0;
-
-            BoxCollider2D collider = nearestObject.GetComponent<BoxCollider2D>();
-            CircleCollider2D circleCollider = nearestObject.GetComponent<CircleCollider2D>();
-
-            if(collider != null) y = collider.size.y;
-            if (circleCollider != null) y = circleCollider.radius;
-            
-            rectTransform.anchoredPosition = nearestObject.transform.position + new Vector3(0f, 0.5f , 0f);
+        {   
+            rectTransform.anchoredPosition = nearestObject.transform.position + new Vector3(0f, 1.0f , 0f);
         }
         else
         {

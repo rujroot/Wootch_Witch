@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed = 1f;
+    public Animator animator;
     private Vector2 movement;
     private Rigidbody2D rb;
 
@@ -28,7 +30,17 @@ public class PlayerMovement : MonoBehaviour
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
-            movement = movement.normalized; // Prevent faster diagonal movement
+
+            if(!( (movement.x > -1 && movement.x < 1) || (movement.y > -1 && movement.y < 1) ) )
+            {
+                if (movement.x > 0) movement.x = 1;
+                else movement.x = -1;
+                movement.y = 0;
+            }
+
+            animator.SetFloat("x", movement.x);
+            animator.SetFloat("y", movement.y);
+            
         }
         else
         {
@@ -40,6 +52,8 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 newPos = rb.position + movement * moveSpeed * Time.fixedDeltaTime;
+        float speed = (movement * moveSpeed * Time.fixedDeltaTime).magnitude;
+        animator.SetFloat("speed",  speed);
         newPos.x = Mathf.Clamp(newPos.x, GetMinX(), GetMaxX());
         newPos.y = Mathf.Clamp(newPos.y, GetMinY(), GetMaxY());
 

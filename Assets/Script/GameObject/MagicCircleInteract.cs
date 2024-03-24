@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class MagicCircleInteract :  MonoBehaviour, INteractable, IDialogueable
 {
-    public GameObject TopCarpet, magic;
+    public GameObject TopCarpet, magic, clone;
+    public Animator smoke;
 
     private bool firstMeet = true;
 
@@ -18,7 +19,10 @@ public class MagicCircleInteract :  MonoBehaviour, INteractable, IDialogueable
 
         if (amulet != null)
         {
-            
+            clone.SetActive(true);
+            inventory.Delete(amulet);
+            timer.AddQuest("Witch");
+            smoke.SetTrigger("Play");
         }
         else if (carpet != null)
         {

@@ -39,7 +39,6 @@ public class Dialogue : MonoBehaviour
                 interactObject = null;
             }
             
-            
         }
         else
         {
@@ -53,7 +52,7 @@ public class Dialogue : MonoBehaviour
     {
         textUI.text = allDialogues[index];
         Vector2 size = dialogueRect.sizeDelta;
-        float lenght = 20 * textUI.text.Length;
+        float lenght = 25 * textUI.text.Length;
 
         left.sizeDelta = new Vector2(50, 150);
         right.sizeDelta = new Vector2(50, 150);

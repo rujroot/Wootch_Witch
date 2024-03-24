@@ -6,7 +6,7 @@ using UnityEngine;
 public class CauldronInteract :  MonoBehaviour, INteractable, IDialogueable
 {
     public Sprite potionSprite;
-    public Animator boomAnimator, cauldron;
+    public Animator boomAnimator, cauldron, smoke;
 
     private bool isEmpty = false;
     private bool firstMeet = true;
@@ -32,6 +32,7 @@ public class CauldronInteract :  MonoBehaviour, INteractable, IDialogueable
             inventory.Delete(glass);
             inventory.CreateItem(potionSprite, "Potion");
             cauldron.SetTrigger("Empty");
+            smoke.SetTrigger("Play");
             timer.Finish("Cauldron");
         }
     }

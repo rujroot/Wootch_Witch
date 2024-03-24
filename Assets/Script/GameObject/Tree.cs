@@ -8,6 +8,7 @@ public class Tree : MonoBehaviour, INteractable, IDialogueable
 {
     public Sprite glassWithTreeSprite;
     public GameObject tree;
+    public Animator smoke;
 
     public void Interact(GameObject player)
     {
@@ -17,9 +18,12 @@ public class Tree : MonoBehaviour, INteractable, IDialogueable
 
         if (glass != null)
         {
+            smoke.SetTrigger("Play");
+            Destroy(transform.gameObject);
             inventory.Delete(glass);
             inventory.CreateItem(glassWithTreeSprite, "GlassWithTree");
             timer.Finish("Tree");
+            
         }
 
     }
