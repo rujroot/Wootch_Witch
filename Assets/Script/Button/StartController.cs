@@ -12,6 +12,7 @@ public class StartController : MonoBehaviour
     public Button startButton; // Use a start button to initiate the slideshow
     public Image displayImage;
     public Image startImage;
+    public Image preStartImage;
     public TextMeshProUGUI displayText;
 
     private int currentSlideIndex = 0;
@@ -20,6 +21,7 @@ public class StartController : MonoBehaviour
     {
         // Initially hide slideshow elements and the finish button
         startImage.gameObject.SetActive(true);
+        preStartImage.gameObject.SetActive(true);
         displayImage.gameObject.SetActive(false);
         displayText.gameObject.SetActive(false);
 
@@ -33,6 +35,7 @@ public class StartController : MonoBehaviour
         displayImage.gameObject.SetActive(true);
         displayText.gameObject.SetActive(true);
         startImage.gameObject.SetActive(false);
+        preStartImage.gameObject.SetActive(false);
         startButton.gameObject.SetActive(false); // Optionally hide the start button
 
         if(slides.Length > 0)
