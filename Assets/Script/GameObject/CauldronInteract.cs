@@ -66,7 +66,7 @@ public class CauldronInteract :  MonoBehaviour, INteractable, IDialogueable
         {
             dialogue.AddDialogue(new List<string>()
             {
-                "It's Empty."
+                "It's empty."
             }, null);
         }
         else if(book != null)

@@ -39,7 +39,7 @@ public class Shelf :  MonoBehaviour, INteractable, IDialogueable
         else
         {
             dialogue.AddDialogue(new List<string> {
-                "It's Empty." }, this);
+                "It's empty." }, this);
         }
         
 

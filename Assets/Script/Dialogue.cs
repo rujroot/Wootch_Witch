@@ -55,6 +55,7 @@ public class Dialogue : MonoBehaviour
         Vector2 size = dialogueRect.sizeDelta;
         float lenght = 25 * textUI.text.Length;
         lenght = math.max(300, lenght);
+        lenght = math.min(1800, lenght);
 
         left.sizeDelta = new Vector2(50, 150);
         right.sizeDelta = new Vector2(50, 150);

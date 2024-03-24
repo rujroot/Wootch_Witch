@@ -20,15 +20,21 @@ public class Book : MonoBehaviour, INteractable, IDialogueable
     }
 
     public void PlayDialogue(GameObject player)
+
     {
+        Dialogue dialogue = player.GetComponent<Dialogue>();
         if (!isGet)
         {
             isGet = true;
 
             audioSource.Play();
-            Dialogue dialogue = player.GetComponent<Dialogue>();
+            
             dialogue.AddDialogue(new List<string> { "Reading books about chemistry can give you knowledge about pharmaceutical preparation!", "This knowledge might come in handy at the cauldron!" }, this);
 
+        }
+        else
+        {
+            dialogue.AddDialogue(new List<string> { "It's empty." }, null);
         }
     }
 
