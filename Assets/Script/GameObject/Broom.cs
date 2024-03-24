@@ -7,6 +7,7 @@ public class Broom : MonoBehaviour, IDialogueable, INteractable
     public bool isUse = false;
     public GameObject cat, player;
     public Animator smoke;
+    public AudioSource audioSource;
 
     private Vector2 dir = new Vector2(-1, 0);
     private float speed = 60.0f;
@@ -85,6 +86,7 @@ public class Broom : MonoBehaviour, IDialogueable, INteractable
             rb.gravityScale = 0;
             
             StartCoroutine(RanddomBroom());
+            audioSource.Play();
         }
 
     }

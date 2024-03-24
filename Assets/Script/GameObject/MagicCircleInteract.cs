@@ -7,6 +7,7 @@ public class MagicCircleInteract :  MonoBehaviour, INteractable, IDialogueable
 {
     public GameObject TopCarpet, magic, clone;
     public Animator smoke;
+    public AudioSource audioSource;
 
     private bool firstMeet = true;
 
@@ -23,6 +24,7 @@ public class MagicCircleInteract :  MonoBehaviour, INteractable, IDialogueable
             inventory.Delete(amulet);
             timer.AddQuest("Witch");
             smoke.SetTrigger("Play");
+            audioSource.Play();
         }
         else if (carpet != null)
         {

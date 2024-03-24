@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 movement;
     private Rigidbody2D rb;
-
+    private bool walking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -63,11 +63,13 @@ public class PlayerMovement : MonoBehaviour
 
         if(speed != 0)
         {
-            audioSource.Play();
+            if(!walking) audioSource.Play();
+            walking = true;
         }
         else
         {
             audioSource.Stop();
+            walking= false;
         }
 
         rb.MovePosition(newPos);

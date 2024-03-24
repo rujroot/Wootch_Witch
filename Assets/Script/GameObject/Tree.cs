@@ -9,6 +9,7 @@ public class Tree : MonoBehaviour, INteractable, IDialogueable
     public Sprite glassWithTreeSprite;
     public GameObject tree;
     public Animator smoke;
+    public AudioSource audioSource;
 
     public void Interact(GameObject player)
     {
@@ -40,6 +41,7 @@ public class Tree : MonoBehaviour, INteractable, IDialogueable
 
         if(glass != null)
         {
+            audioSource.Play();
             dialogue.AddDialogue(new List<string> {
             "The plants in bottles look absolutely adorable!" }, this);
         }

@@ -12,7 +12,6 @@ public class SceneButton : MonoBehaviour
 
     public void GameEnd()
     {
-        print("press");
         SceneManager.LoadScene("Start");
     }
 }
