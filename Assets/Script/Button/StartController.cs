@@ -15,6 +15,9 @@ public class StartController : MonoBehaviour
     public Image preStartImage;
     public TextMeshProUGUI displayText;
 
+    public AudioClip audioClip;
+    public AudioSource audioSource;
+
     private int currentSlideIndex = 0;
 
     void Start()
@@ -37,6 +40,9 @@ public class StartController : MonoBehaviour
         startImage.gameObject.SetActive(false);
         preStartImage.gameObject.SetActive(false);
         startButton.gameObject.SetActive(false); // Optionally hide the start button
+
+        audioSource.clip = audioClip;
+        audioSource.Play();
 
         if(slides.Length > 0)
         {

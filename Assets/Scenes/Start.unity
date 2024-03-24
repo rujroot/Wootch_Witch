@@ -289,6 +289,8 @@ MonoBehaviour:
   startImage: {fileID: 1015343021}
   preStartImage: {fileID: 1636413954}
   displayText: {fileID: 1276614075}
+  audioClip: {fileID: 8300000, guid: f02bc1bda1ddcbd439d824b1de94efdf, type: 3}
+  audioSource: {fileID: 881444951}
 --- !u!1 &264325264
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +456,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e3162c9277012b14b8b9cdceca56fd41, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
