@@ -13,7 +13,7 @@ public class Timer : MonoBehaviour
 
     public int GAME_TIME = 60;
     public TextMeshProUGUI textUI;
-    public GameObject cameraPoint, Player, NPCs;
+    public GameObject cameraPoint, Player, NPCs, spawnPoint;
     public Image Fade;
 
     public List<string> quests = new List<string>() { "Cauldron", "Tree", "Cat", "Ring" } ;
@@ -122,9 +122,14 @@ public class Timer : MonoBehaviour
             } 
 
             currentTime = currentTime - 1;
+
+            if (currentTime <= 5) textUI.color = new Color(255, 0, 0);
+            else if (currentTime <= 15) textUI.color = new Color(255, 255, 0);
+
             if(currentTime < 0 )
             {
                 gameEnd = true;
+                Player.transform.localPosition = spawnPoint.transform.localPosition;
                 Check();
                 break;
             }
