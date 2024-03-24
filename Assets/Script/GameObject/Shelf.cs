@@ -7,6 +7,7 @@ using UnityEngine;
 public class Shelf :  MonoBehaviour, INteractable, IDialogueable
 {
     public Sprite sprite;
+    public GameObject bottle;
 
     private bool firstMeet = true;
 
@@ -19,6 +20,7 @@ public class Shelf :  MonoBehaviour, INteractable, IDialogueable
             firstMeet = false;
             Inventory inventory = player.GetComponent<Inventory>();
             inventory.CreateItem(sprite, "Glass");
+            Destroy(bottle);
         }
         
     }
