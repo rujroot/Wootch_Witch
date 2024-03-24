@@ -8,8 +8,11 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 1f;
     public Animator animator;
+    public AudioSource audioSource;
+
     private Vector2 movement;
     private Rigidbody2D rb;
+
 
     // Start is called before the first frame update
     void Start()
@@ -40,11 +43,12 @@ public class PlayerMovement : MonoBehaviour
 
             animator.SetFloat("x", movement.x);
             animator.SetFloat("y", movement.y);
-            
+   
         }
         else
         {
             movement = new Vector3(0f, 0f, 0f);
+           
         }
         
     }
@@ -56,6 +60,15 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("speed",  speed);
         newPos.x = Mathf.Clamp(newPos.x, GetMinX(), GetMaxX());
         newPos.y = Mathf.Clamp(newPos.y, GetMinY(), GetMaxY());
+
+        if(speed != 0)
+        {
+            audioSource.Play();
+        }
+        else
+        {
+            audioSource.Stop();
+        }
 
         rb.MovePosition(newPos);
     }

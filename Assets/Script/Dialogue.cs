@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
 using Unity.PlasticSCM.Editor.WebApi;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -53,6 +54,7 @@ public class Dialogue : MonoBehaviour
         textUI.text = allDialogues[index];
         Vector2 size = dialogueRect.sizeDelta;
         float lenght = 25 * textUI.text.Length;
+        lenght = math.max(300, lenght);
 
         left.sizeDelta = new Vector2(50, 150);
         right.sizeDelta = new Vector2(50, 150);

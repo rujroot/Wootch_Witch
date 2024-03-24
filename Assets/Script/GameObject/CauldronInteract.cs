@@ -7,6 +7,8 @@ public class CauldronInteract :  MonoBehaviour, INteractable, IDialogueable
 {
     public Sprite potionSprite;
     public Animator boomAnimator, cauldron, smoke;
+    public List<AudioClip> clips;
+    public AudioSource audioSource;
 
     private bool isEmpty = false;
     private bool firstMeet = true;
@@ -34,6 +36,9 @@ public class CauldronInteract :  MonoBehaviour, INteractable, IDialogueable
             cauldron.SetTrigger("Empty");
             smoke.SetTrigger("Play");
             timer.Finish("Cauldron");
+
+            audioSource.clip = clips[1];
+            audioSource.Play();
         }
     }
 
@@ -49,6 +54,8 @@ public class CauldronInteract :  MonoBehaviour, INteractable, IDialogueable
                 "In a massive, common cauldron, magic potions are often brewed.",
                 "Villagers usually repurpose it to collect rainwater.",
             } , null);
+            audioSource.clip = clips[0];
+            audioSource.Play();
         }
 
         Inventory inventory = player.GetComponent<Inventory>();
