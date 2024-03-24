@@ -162,14 +162,14 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 166cd79dcee222c4a8e84d5d38256b40, type: 3}
   - {fileID: 21300000, guid: a23562840345194458a05218c7d6bd43, type: 3}
   slideTexts:
-  - She is not a witch.
-  - Omae wa mou shindeiru!
-  - Nani!
-  - Let's go home.
-  - ..
-  - Nani
-  - ..
-  - You win.
+  - '"We hath encountered naught of peculiar ilk."'
+  - '"Thou art not a witch, art thou?"'
+  - '"Yet mine eyes doth witness thee as a genuine enchantress, do they not?"'
+  - '"Let us away together, then."'
+  - 
+  - 
+  - 
+  - 
   finishButton: {fileID: 636631016}
   displayImage: {fileID: 637585596}
   displayText: {fileID: 342279864}
@@ -272,8 +272,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -833.96173, y: 0, z: -434.08008, w: 0}
+  m_margin: {x: -1040.2366, y: 0, z: -631.6389, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
